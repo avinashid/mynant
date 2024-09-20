@@ -2,6 +2,7 @@
 *.class
 *.log
 *.pyc
+*.env
 *.swp
 .DS_Store
 .atom/
@@ -41,3 +42,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android/app/google-services.json
