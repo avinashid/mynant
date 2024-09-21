@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mynant/global.dart';
 import 'package:mynant/view/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -81,7 +82,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.black),
-                            onPressed: () {},
+                            onPressed: () async {
+                              if (!_formKey.currentState!.validate()) {
+                                return;
+                              }
+                              userViewModel.login(
+                                  _email.text.trim(), _password.text.trim());
+                            },
                             child: const Text(
                               "Login",
                               style: TextStyle(color: Colors.white),
